@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "lib": ["DOM", "ES6", "ES2017", "ES2020", "ES2022", "ES2023"],
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["node_modules/*"]
+    },
+    "types": ["node"]  
+  },
+  "include": [
+    "src",
+    "vite.config.ts"  
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "cypress"  
+  ]
+}

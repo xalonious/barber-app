@@ -1,0 +1,22 @@
+[
+	{
+		"reviewId": 1,
+		"customerId": 1,
+		"rating": 5,
+		"comment": "Uitstekende service!",
+		"customer": {
+			"name": "John Doe",
+			"customerId": 1
+		}
+	},
+	{
+		"reviewId": 2,
+		"customerId": 2,
+		"rating": 4,
+		"comment": "Geweldige ervaring!",
+		"customer": {
+			"name": "Jane Doe",
+			"customerId": 2
+		}
+	}
+]

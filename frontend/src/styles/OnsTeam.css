@@ -1,0 +1,27 @@
+.ons-team {
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  flex-grow: 1; 
+}
+
+.ons-team h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.staff-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.error-text {
+  font-size: 2rem;
+  color: red;
+  margin-top: 2rem;
+}
