@@ -4,6 +4,7 @@ const UNAUTHORIZED = 'UNAUTHORIZED';
 const FORBIDDEN = 'FORBIDDEN';
 const INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR';
 const CONFLICT = 'CONFLICT';
+const UNPROCESSABLE_ENTITY = 'UNPROCESSABLE_ENTITY';
 
 export default class ServiceError extends Error {
   code: string;
@@ -38,6 +39,10 @@ export default class ServiceError extends Error {
     return new ServiceError(CONFLICT, message);
   }
 
+  static unprocessableEntity(message: string) {
+    return new ServiceError(UNPROCESSABLE_ENTITY, message);
+  }
+
   get isNotFound(): boolean {
     return this.code === NOT_FOUND;
   }
@@ -60,5 +65,9 @@ export default class ServiceError extends Error {
 
   get isConflict(): boolean {
     return this.code === CONFLICT;
+  }
+
+  get isUnprocessableEntity(): boolean {
+    return this.code === UNPROCESSABLE_ENTITY;
   }
 }

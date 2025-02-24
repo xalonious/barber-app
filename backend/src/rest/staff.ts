@@ -117,6 +117,10 @@ router.get(
         if (error.isValidationFailed) {
           return res.status(400).json({ error: error.message });
         }
+
+        if (error.isUnprocessableEntity) {
+          return res.status(422).json({ error: error.message });
+        }
       }
 
       getLogger().error('Error retrieving staff availability:', error);

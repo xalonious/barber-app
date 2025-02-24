@@ -30,7 +30,7 @@ export const getStaffAvailability = async (staffId: number, date: string, servic
   if (dayOfWeek === 6) {
     closingHour = 13;
   } else if (dayOfWeek === 0) {
-    throw ServiceError.validationFailed('The store is closed on Sundays.');
+    throw ServiceError.unprocessableEntity('The store is closed on Sundays.');
   }
 
   const endDate = new Date(startDate);
