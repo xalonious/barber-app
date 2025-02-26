@@ -142,7 +142,7 @@ describe('Staff API', () => {
         .get(`/api/staff/${staffId}/availability`)
         .query({ date: '2025-03-02', serviceId: knipbeurtServiceId }); // Sunday
 
-      expect(response.status).toBe(400);
+      expect(response.status).toBe(422);
       expect(response.body).toMatchObject({
         error: 'The store is closed on Sundays.',
       });
