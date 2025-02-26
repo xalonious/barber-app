@@ -157,6 +157,10 @@ router.post(
         if (error.isForbidden) {
           return res.status(403).json({ error: error.message });
         }
+
+        if(error.isUnprocessableEntity) {
+          return res.status(422).json({ error: error.message });
+        }
       }
       getLogger().error('Error creating appointment:', error);
       res.status(500).json({ error: 'Failed to create appointment' });
@@ -253,6 +257,9 @@ router.patch(
             error: 'VALIDATION_FAILED',
             details: { body: { date: error.message } },
           });
+        }
+        if(error.isUnprocessableEntity) {
+          return res.status(422).json({ error: error.message });
         }
       }
       getLogger().error('Error updating appointment:', error);

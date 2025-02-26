@@ -62,7 +62,7 @@ export const createAppointment = async (appointmentData: any) => {
   const startTime = new Date(appointmentData.date);
 
   if (!isStoreOpen(startTime)) {
-    throw ServiceError.validationFailed('The store is closed during the selected time.');
+    throw ServiceError.unprocessableEntity('The store is closed during the selected time.');
   }
 
   const staff = await prisma.staff.findUnique({
@@ -153,7 +153,7 @@ export const updateAppointmentById = async (
     }
 
     if (!isStoreOpen(startTime)) {
-      throw ServiceError.validationFailed('The store is closed during the selected time.');
+      throw ServiceError.unprocessableEntity('The store is closed during the selected time.');
     }
   }
 
